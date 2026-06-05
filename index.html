@@ -1,33 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Boodschappenlijst</title>
-</head>
-<body>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-<h1>Boodschappenlijst 🛒</h1>
+  // 🔴 PLAK HIER JE EIGEN CONFIG
+  const firebaseConfig = {
+    apiKey: "AIzaSyB7Cwb2N_3hb4nrm7lZ405Eeg5O_XsT_Fk",
+    authDomain: "kralleskoockingklub.firebaseapp.com",
+    databaseURL: "https://kralleskoockingklub-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "kralleskoockingklub"
+  };
 
-<label>
-  <input type="checkbox" id="item1"> Bier 🍺
-</label><br>
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
 
-<label>
-  <input type="checkbox" id="item2"> Vlees 🥩
-</label><br>
-
-<script>
   const checkboxes = document.querySelectorAll("input[type=checkbox]");
 
   checkboxes.forEach(cb => {
-    const saved = localStorage.getItem(cb.id);
-    if (saved === "true") cb.checked = true;
+    const itemRef = ref(db, "checklist/" + cb.id);
 
+    // ✅ 1. Luister realtime naar updates
+    onValue(itemRef, (snapshot) => {
+      const value = snapshot.val();
+      if (value !== null) {
+        cb.checked = value;
+      }
+    });
+
+    // ✅ 2. Bij verandering → save naar Firebase
     cb.addEventListener("change", () => {
-      localStorage.setItem(cb.id, cb.checked);
+      set(itemRef, cb.checked);
     });
   });
 </script>
 
-</body>
-</html>
-``
