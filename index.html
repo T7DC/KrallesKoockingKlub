@@ -1,8 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Boodschappenlijst</title>
+</head>
+<body>
+
+<h1>Boodschappenlijst 🛒</h1>
+
+<label>
+  <input type="checkbox" id="item1"> Bier 🍺
+</label><br>
+
+<label>
+  <input type="checkbox" id="item2"> Vlees 🥩
+</label><br>
+
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
   import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-  // 🔴 PLAK HIER JE EIGEN CONFIG
   const firebaseConfig = {
     apiKey: "AIzaSyB7Cwb2N_3hb4nrm7lZ405Eeg5O_XsT_Fk",
     authDomain: "kralleskoockingklub.firebaseapp.com",
@@ -18,7 +34,7 @@
   checkboxes.forEach(cb => {
     const itemRef = ref(db, "checklist/" + cb.id);
 
-    // ✅ 1. Luister realtime naar updates
+    // ✅ Luister realtime
     onValue(itemRef, (snapshot) => {
       const value = snapshot.val();
       if (value !== null) {
@@ -26,10 +42,12 @@
       }
     });
 
-    // ✅ 2. Bij verandering → save naar Firebase
+    // ✅ Save bij change
     cb.addEventListener("change", () => {
       set(itemRef, cb.checked);
     });
   });
 </script>
 
+</body>
+</html>
