@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Hello World</title>
+  <title>Boodschappenlijst</title>
 </head>
 <body>
-  <h1>Hello World 👋</h1>
-  <p>Dit is mijn eerste GitHub Pages site.</p>
+
+<h1>Boodschappenlijst 🛒</h1>
+
+<label>
+  <input type="checkbox" id="item1"> Bier 🍺
+</label><br>
+
+<label>
+  <input type="checkbox" id="item2"> Vlees 🥩
+</label><br>
+
+<script>
+  const checkboxes = document.querySelectorAll("input[type=checkbox]");
+
+  checkboxes.forEach(cb => {
+    const saved = localStorage.getItem(cb.id);
+    if (saved === "true") cb.checked = true;
+
+    cb.addEventListener("change", () => {
+      localStorage.setItem(cb.id, cb.checked);
+    });
+  });
+</script>
+
 </body>
 </html>
+``
