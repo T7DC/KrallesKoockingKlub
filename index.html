@@ -1,47 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Boodschappenlijst</title>
+  <title>KrallesKoockingKlub 🥩</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f2eb;
+      margin: 0;
+      padding: 20px;
+      color: #2c2c2c;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 15px auto;
+      max-width: 550px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 6px 0;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 10px;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Boodschappenlijst 🛒</h1>
+<div class="logo">🥩🔥🍺</div>
 
+<h1>KrallesKoockingKlub</h1>
+<div class="subtitle">Vrijgezellenweekend Ardennen 🏊‍♂️🍖</div>
+
+
+<div class="card">
 <h2>🥩 Vlees</h2>
-<label><input type="checkbox" id="vlees_ribben"> Ribben – 2,4 kg</label><br>
-<label><input type="checkbox" id="vlees_worsten"> Worsten – 1,8 kg</label><br>
-<label><input type="checkbox" id="vlees_fakkels"> Fakkels – 1,8 kg</label><br>
-<label><input type="checkbox" id="vlees_steak"> Prime steak – 3,6 kg</label><br>
+<label><input type="checkbox" id="vlees_ribben"> Ribben – 2,4 kg</label>
+<label><input type="checkbox" id="vlees_worsten"> Worsten – 1,8 kg</label>
+<label><input type="checkbox" id="vlees_fakkels"> Fakkels – 1,8 kg</label>
+<label><input type="checkbox" id="vlees_steak"> Steak – 3,6 kg</label>
+</div>
 
+
+<div class="card">
 <h2>🥦 Groenten & bijgerechten</h2>
-<label><input type="checkbox" id="bij_stokbrood"> Stokbrood – 6 à 7 stuks</label><br>
-<label><input type="checkbox" id="bij_sla"> Sla / sla mix – 1,0 à 1,1 kg totaal</label><br>
-<label><input type="checkbox" id="bij_tomaten"> Tomaten – 2,0 à 2,5 kg totaal</label><br>
-<label><input type="checkbox" id="bij_komkommer"> Komkommer – 2 stuks</label><br>
-<label><input type="checkbox" id="bij_paprika"> Paprika / grillgroenten – 1,5 à 1,8 kg totaal</label><br>
-<label><input type="checkbox" id="bij_aardappelen"> Aardappelen – 3,3 à 3,6 kg</label><br>
+<label><input type="checkbox" id="stokbrood"> Stokbrood – 6 à 7 stuks</label>
+<label><input type="checkbox" id="sla"> Sla – ±1 kg</label>
+<label><input type="checkbox" id="tomaten"> Tomaten – 2 à 2,5 kg</label>
+<label><input type="checkbox" id="komkommer"> Komkommer – 2 stuks</label>
+<label><input type="checkbox" id="paprika"> Paprika & BBQ groenten – ±1,5 kg</label>
+<label><input type="checkbox" id="aardappelen"> Aardappelen – 3,5 kg</label>
+</div>
 
-<h2>🍞 Ontbijt (2x)</h2>
-<label><input type="checkbox" id="ontbijt_brood"> Brood / sandwiches – 4,0 à 4,5 kg totaal</label><br>
-<label><input type="checkbox" id="ontbijt_boter"> Boter – 400 à 500 g</label><br>
-<label><input type="checkbox" id="ontbijt_eieren"> Eieren – 36 à 48 stuks</label><br>
-<label><input type="checkbox" id="ontbijt_kaas"> Kaas – 1,2 à 1,5 kg</label><br>
-<label><input type="checkbox" id="ontbijt_charcuterie"> Charcuterie – 1,2 à 1,5 kg</label><br>
-<label><input type="checkbox" id="ontbijt_zoet"> Confituur / choco – 600 à 800 g totaal</label><br>
 
+<div class="card">
+<h2>🍞 Ontbijt (2 dagen)</h2>
+<label><input type="checkbox" id="brood"> Brood & sandwiches – 4 à 4,5 kg</label>
+<label><input type="checkbox" id="boter"> Boter – 400 à 500 g</label>
+<label><input type="checkbox" id="eieren"> Eieren – 36 à 48 stuks</label>
+<label><input type="checkbox" id="kaas"> Kaas – 1,2 à 1,5 kg</label>
+<label><input type="checkbox" id="charcuterie"> Charcuterie – 1,2 à 1,5 kg</label>
+<label><input type="checkbox" id="beleg"> Confituur / choco – ±700 g</label>
+</div>
+
+
+<div class="card">
 <h2>🍝 Spaghetti</h2>
-<label><input type="checkbox" id="spaghetti_pasta"> Droge spaghetti – 1,5 kg</label><br>
-<label><input type="checkbox" id="spaghetti_saus"> Spaghettisaus – 3,0 kg</label><br>
-<label><input type="checkbox" id="spaghetti_kaas"> Geraspte kaas – 300 à 400 g</label><br>
+<label><input type="checkbox" id="spaghetti"> Spaghetti – 1,5 kg</label>
+<label><input type="checkbox" id="saus"> Spaghettisaus – 3 kg</label>
+<label><input type="checkbox" id="kaas_spaghetti"> Geraspte kaas – 300 à 400 g</label>
+</div>
 
+
+<div class="card">
 <h2>🧂 Sauzen & extras</h2>
-<label><input type="checkbox" id="extra_mayo"> Mayonaise – 1 grote bokaal</label><br>
-<label><input type="checkbox" id="extra_ketchup"> Ketchup – 1 fles</label><br>
-<label><input type="checkbox" id="extra_bbqsaus"> BBQ-saus – 1 fles</label><br>
-<label><input type="checkbox" id="extra_mosterd"> Samoerai – 1 pot</label><br>
-<label><input type="checkbox" id="extra_kruidenboter"> Kruidenboter – 250 à 300 g</label><br>
-
-
+<label><input type="checkbox" id="mayo"> Mayonaise</label>
+<label><input type="checkbox" id="ketchup"> Ketchup</label>
+<label><input type="checkbox" id="bbq"> BBQ saus</label>
+<label><input type="checkbox" id="mosterd"> Mosterd</label>
+<label><input type="checkbox" id="kruidenboter"> Kruidenboter – 250 à 300 g</label>
+<label><input type="checkbox" id="olie"> Olijfolie</label>
+<label><input type="checkbox" id="peper"> Peper & zout</label>
+</div>
 
 
 <script type="module">
@@ -63,15 +137,11 @@
   checkboxes.forEach(cb => {
     const itemRef = ref(db, "checklist/" + cb.id);
 
-    // ✅ Luister realtime
     onValue(itemRef, (snapshot) => {
       const value = snapshot.val();
-      if (value !== null) {
-        cb.checked = value;
-      }
+      if (value !== null) cb.checked = value;
     });
 
-    // ✅ Save bij change
     cb.addEventListener("change", () => {
       set(itemRef, cb.checked);
     });
